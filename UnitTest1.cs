@@ -16,7 +16,7 @@ namespace Csharpprojectselenium
     {
 
         IWebDriver driver;
-        [Setup]
+        //[Setup]
         [SetUp]
         public void Setup()
         {
