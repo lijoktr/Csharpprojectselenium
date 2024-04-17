@@ -12,7 +12,7 @@ using NuGet.Frameworks;
 
 namespace Csharpprojectselenium
 {
-    public class locators
+    public class UnitTest1
     {
 
         IWebDriver driver;
@@ -39,7 +39,8 @@ namespace Csharpprojectselenium
             //driver.FindElement(By.Id("username")).SendKeys("rahulshettyacademy");
             driver.FindElement(By.Id("username")).SendKeys("rahulshettyacadem");
             driver.FindElement(By.Name("password")).SendKeys("learning");
-            driver.FindElement(By.CssSelector("input[type='checkbox'")).Click();
+            //driver.FindElement(By.CssSelector("input[type='checkbox'")).Click();
+            driver.FindElement(By.XPath("//div[@class='form-group']/label/span/input")).Click();
             driver.FindElement(By.XPath("//input[@id='signInBtn']")).Click();
 
             // to collect error message give wrong username
@@ -50,10 +51,8 @@ namespace Csharpprojectselenium
             String actual_attr = Link_1.GetAttribute("href");
             String expected_attr = "https://rahulshettyacademy.com/documents-request";
             Assert.That(actual_attr, Is.EqualTo(expected_attr));
-
-
-
-
+            //Assert.AreEqual(expected_attr, actual_attr);
+            
         }
 
         [TearDown]
